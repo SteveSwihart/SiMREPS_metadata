@@ -1,0 +1,7 @@
+# spyder
+.spyproject/*
+
+# SiMREPS-specific
+savedValues.json
+
+__pycache__

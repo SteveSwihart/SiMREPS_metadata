@@ -1,0 +1,39 @@
+Allow a copy from last or display last, but change date/time
+For extra credit, allow save of profiles - location, person, DNA/protein, etc.
+
+Global Container
+  User/Customer Container
+    Who
+	When
+	Where
+	Sample Name
+  Instrument Container
+    Inst Name
+	Serial/Identifier
+  Optical Info Container
+	Oil betw sample and lens yes/no?   <needed? s.b. in sample or in hw?>
+	Oil type
+	Laser Power (source)
+	Laser Power (free space @ obj?) <would we always know this?>
+	TIR Angle
+	Lens NA
+	Lens Magnification
+	Lens temp?
+	FOV size
+	Imaging Info
+	  Camera Name (Brand, ver, etc)
+	  Resolution (max)
+	  Resolution used (or binning)
+	  Exposure time
+	  Frame Rate
+	  Gain
+	  Camera Offset
+  Consumable Info
+	Substrate material
+	Surface Chemistry (get Bill's input)
+  Sample info
+	What
+	Concentration
+	Buffer
+	Time sample made
+	Analysis start time (images will have stamps from when they were taken)

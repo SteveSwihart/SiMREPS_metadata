@@ -1,0 +1,75 @@
+PCR PinCR
+50 uL vol betw existing well plate and plastic cover/layer, then fit metal heat post inside.
+
+The following is relative to v 0011-9
+
+
+Sample section (Bill, 29-Jan-21)
+ x Capture molecule as is
+ x Blocking (orange), default=none, list as is (move up)
+ x Standard:  PN (list), lot # (list)
+ x Sample Matrix: dropdown, Vendor (list: Sigma, CSC, Cytiva, MP Bio, Thermo), Lot # (list from bill)
+ x Sample Volume (list) ,
+   x tooltip "volume of the analyte/sample matrix added to the buffer/OSS diluent", buffer/OSS Vol, x x calculated dil factor (=(sample volume+OSS Vol)/sample volume), 
+   x calculated "% matrix" = (1/dilution factor)*100
+ x buffer and salt default to PBSx and 150 mM, move down 1 row
+ x Vol loaded, tip "Volume put into consumable well", default 55, list 55, 100, 200
+
+From meeting 28-Jan-21
+General
+  Make a "blank all" button
+ x Make "blank" button for each section
+  Change field color for any field I blanked on load
+
+"User/Customer" section - the required stuff:
+ x Analyte ID stays as is (required, not blanked ever)
+ x Change name "ID" to "Target"
+ x Blank assay concentration on load of program, don't blank between submits
+ x In required section, Assay conc TT: "final concentration of target analyte in well"
+
+Consumable Info
+ x Change "Sample Maker (who)" to "Sample Mfg (site)", dynamo update to be site rather than person
+
+Sample info:
+ x Add lot # to cap molecule section next to "ID"
+   x add to dynamo as str
+   x write to metaDict.json and savedValues.json
+	propagate to uploader
+	back end
+ x Blank lot # on load, keep run to run
+
+  Add "Analyte PN" (changed to "Standard" post meeting), "Analyte Lot #"
+  next to Analyte Vol (changed to , add "Diluent Vol (uL)", text field, add calculated dil factor: (dil+anal)/anal_vol
+
+Under Analyte/Sample, OSS = "Oxygen Scavenger System added to matrix"
+
+Detection molecule:
+ x make ID wider
+ x A list will be made in Michigan for dynamo update
+  Change "Imaging Solution Vol (µL) to "Imaging Sol Loaded (µL)"
+  Add "Fluorophore", dropdown, "Cy5","Alexa", "Other"
+  Blank lot # on close/reopen
+
+Folder Choosing:
+  "Next" button to select and autopopulate next from folder list without opening Tweak
+  
+What to clear in Sample Info:
+-PROTOCOL_TYPE-
+-ASSAY_TYPE-
+-CAPTURE_MOLECULE-
+-CAP_LOT_NUMBER-
+-CAPTURE_MOLECULE_CONCENTRATION-
+-CAPTURE_MOLECULE_VOLUME-
+-BLOCKING_REAGENT-
+-STANDARD_PN-
+-STANDARD_LOT_NO-
+-SAMPLE_DILUENT-
+-SAMPLE_VENDOR-
+-SAMPLE_LOT_NO-
+-SAMPLE_VOLUME-
+-BUFFER_OSS_VOLUME(uL)-
+-IMAGING_SOLUTION_VOLUME(uL)-
+-BUFFER-
+-SALT_CONCENTRATION-
+-INCUBATION_START_TIME-
+-INCUBATION_TIME-
